@@ -4,35 +4,32 @@
   "version": "0.0.0",
   "author": "Yuya Ochiai <yuya0321@gmail.com>",
   "license": "MIT",
-
-  "keywords": ["hubot","chinachu"],
-
+  "keywords": [
+    "hubot",
+    "chinachu"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/hubot-scripts/hubot-chinachu.git"
   },
-
   "bugs": {
     "url": "https://github.com/hubot-scripts/hubot-chinachu/issues"
   },
-
   "dependencies": {
     "coffee-script": "~1.6"
   },
-
   "devDependencies": {
-    "mocha": "*",
     "chai": "*",
-    "sinon-chai": "*",
-    "sinon": "*",
+    "grunt": "^0.4.5",
+    "grunt-contrib-watch": "~0.5.3",
     "grunt-mocha-test": "~0.7.0",
     "grunt-release": "~0.6.0",
     "matchdep": "~0.1.2",
-    "grunt-contrib-watch": "~0.5.3"
+    "mocha": "*",
+    "sinon": "*",
+    "sinon-chai": "*"
   },
-
   "main": "index.coffee",
-
   "scripts": {
     "test": "grunt test"
   }
