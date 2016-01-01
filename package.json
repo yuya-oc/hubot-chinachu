@@ -16,6 +16,7 @@
     "url": "https://github.com/yuya-oc/hubot-chinachu/issues"
   },
   "dependencies": {
+    "async": "^1.5.0",
     "coffee-script": "~1.6"
   },
   "devDependencies": {

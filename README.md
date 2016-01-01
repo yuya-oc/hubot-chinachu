@@ -8,7 +8,7 @@ See [`src/chinachu.coffee`](src/chinachu.coffee) for full documentation.
 
 In hubot project repo, run:
 
-`npm install hubot-chinachu --save`
+`npm install yuya-oc/hubot-chinachu --save`
 
 Then add **hubot-chinachu** to your `external-scripts.json`:
 
@@ -19,6 +19,10 @@ Then add **hubot-chinachu** to your `external-scripts.json`:
 ## Sample Interaction
 
 ```
-user1>> hubot hello
-hubot>> hello!
+user1>> hubot chinachu now
+hubot>> Recording:
+        ...
+        Broadcasting:
+        ...
+        ...
 ```
