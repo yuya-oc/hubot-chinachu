@@ -10,10 +10,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/hubot-scripts/hubot-chinachu.git"
+    "url": "git://github.com/yuya-oc/hubot-chinachu.git"
   },
   "bugs": {
-    "url": "https://github.com/hubot-scripts/hubot-chinachu/issues"
+    "url": "https://github.com/yuya-oc/hubot-chinachu/issues"
   },
   "dependencies": {
     "coffee-script": "~1.6"
