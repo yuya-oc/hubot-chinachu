@@ -5,7 +5,7 @@ var url = require('url');
 function ChinachuClient(options) {
   var urlObj = url.parse(options.url);
   urlObj.auth = options.user + ':' + options.password;
-  if (!urlObj.path.endsWith('/')) {
+  if (urlObj.path[urlObj.path.length - 1] !== '/') {
     urlObj.path += '/';
   }
   this.baseUrl = url.resolve(url.format(urlObj), urlObj.path + 'api/');
