@@ -2,6 +2,7 @@
 
 var rp = require('request-promise');
 var url = require('url');
+require('./polyfill');
 
 function request_options(client, method, api) {
   return {

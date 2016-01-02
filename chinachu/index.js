@@ -1,11 +1,12 @@
 'use strict'
 
 var url = require('url');
+require('./polyfill');
 
 function ChinachuClient(options) {
   var urlObj = url.parse(options.url);
   urlObj.auth = options.user + ':' + options.password;
-  if (urlObj.path[urlObj.path.length - 1] !== '/') {
+  if (!urlObj.path.endsWith('/')) {
     urlObj.path += '/';
   }
   this.baseUrl = url.resolve(url.format(urlObj), urlObj.path + 'api/');
