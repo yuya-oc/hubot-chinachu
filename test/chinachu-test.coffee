@@ -14,3 +14,6 @@ describe 'chinachu', ->
 
   it 'registers a respond listener, chinachu now', ->
     expect(@robot.respond).to.have.been.calledWith(/chinachu\s+now$/i)
+
+  it 'registers a respond listener, chinachu reserve <id>', ->
+    expect(@robot.respond).to.have.been.calledWith(/chinachu\s+reserve\s+([^\s]+)$/im)
