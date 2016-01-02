@@ -2,6 +2,7 @@
 
 module.exports = function(grunt) {
 
+  grunt.loadNpmTasks('grunt-esformatter');
   grunt.loadNpmTasks('grunt-mocha-test');
   grunt.loadNpmTasks('grunt-release');
 
@@ -24,6 +25,9 @@ module.exports = function(grunt) {
     watch: {
       files: ['Gruntfile.js', 'test/**/*.coffee'],
       tasks: ['test']
+    },
+    esformatter: {
+      src: ['**/*.js', '!node_modules/**']
     }
   });
 
