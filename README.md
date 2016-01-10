@@ -8,7 +8,7 @@ See [`src/chinachu.coffee`](src/chinachu.coffee) for full documentation.
 
 In hubot project repo, run:
 
-`npm install yuya-oc/hubot-chinachu --save`
+`npm install git://github.com/yuya-oc/hubot-chinachu.git --save`
 
 Then add **hubot-chinachu** to your `external-scripts.json`:
 
