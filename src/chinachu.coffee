@@ -31,7 +31,13 @@ chinachu = (require '../chinachu/index').remote({
   userAgent: process.env.HUBOT_CHINACHU_USERAGENT
 });
 
-format_program_data = (data) -> "#{data.channel.name} - #{data.title} (#{data.id})"
+format_program_data = (data) ->
+  zp2 = (num) -> ("0" + num).slice -2
+  start = new Date data.start
+  startStr = "#{zp2 (start.getMonth()+1)}/#{zp2 start.getDate()} #{zp2 start.getHours()}:#{zp2 start.getMinutes()}"
+  end = new Date data.end
+  endStr = "#{zp2 end.getHours()}:#{zp2 end.getMinutes()}"
+  return "#{data.channel.name} #{startStr}-#{endStr} - #{data.title} (#{data.id})"
 
 module.exports = (robot) ->
   robot.respond /chinachu\s+now$/i, (msg) ->
