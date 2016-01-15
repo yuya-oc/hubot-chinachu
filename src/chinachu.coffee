@@ -11,6 +11,7 @@
 #   hubot chinachu reserves - Reply reserved programs
 #   hubot chinachu reserve <programId> - Reserve the specified program manually
 #   hubot chinachu unreserve <programId> - Unreserve the reserved program manually
+#   hubot chinachu search <keyword> - Search programs with the keyword (full title, detail)
 #
 # Notes:
 #   <optional notes required for the script>
@@ -73,3 +74,17 @@ module.exports = (robot) ->
         msg.send "#{format_program_data(data)} has been unreserved"
       .catch (err) ->
         msg.send chinachu.program.errorMessage(err)
+
+  robot.respond /chinachu\s+search\s+([^\s]+)$/im, (msg) ->
+    keyword = msg.match[1].trim()
+    chinachu.schedule.programs.get()
+      .then (data) ->
+        results = data.filter (program) ->
+          return program.fullTitle.indexOf(keyword) != -1 || program.detail.indexOf(keyword) != -1
+        if results.length is 0
+          msg.send "no results"
+        else
+          message = results.map(format_program_data).join('\n')
+          msg.send message
+      .catch (err) ->
+        msg.send err.message

@@ -7,6 +7,11 @@ module.exports = function(client) {
     get: function() {
       return request.get(client, '/schedule.json');
     },
+    programs: {
+      get: function() {
+        return request.get(client, '/schedule/programs.json');
+      }
+    },
     broadcasting: {
       get: function() {
         return request.get(client, '/schedule/broadcasting.json');
