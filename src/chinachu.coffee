@@ -5,6 +5,7 @@
 #   HUBOT_CHINACHU_URL
 #   HUBOT_CHINACHU_USER
 #   HUBOT_CHINACHU_PASSWORD
+#   HUBOT_CHINACHU_USERAGENT = "hubot-chinachu/#{package_version}"
 #
 # Commands:
 #   hubot chinachu now - Reply current broadcasting and recording programs
@@ -19,10 +20,15 @@
 # Author:
 #   Yuya Ochiai <yuya0321@gmail.com>
 
+path = require 'path'
+package_json = require path.join __dirname, '../package.json'
+process.env.HUBOT_CHINACHU_USERAGENT ||= "hubot-chinachu/#{package_json.version}"
+
 chinachu = (require '../chinachu/index').remote({
   url: process.env.HUBOT_CHINACHU_URL,
   user: process.env.HUBOT_CHINACHU_USER,
-  password: process.env.HUBOT_CHINACHU_PASSWORD
+  password: process.env.HUBOT_CHINACHU_PASSWORD,
+  userAgent: process.env.HUBOT_CHINACHU_USERAGENT
 });
 
 format_program_data = (data) -> "#{data.channel.name} - #{data.title} (#{data.id})"
